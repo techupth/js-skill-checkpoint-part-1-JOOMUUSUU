@@ -19,3 +19,11 @@ const products = [
 
 const promotionCode = "";
 // เริ่มเขียนโค้ดตรงนี้
+
+const totalQuantity = products.reduce((acc, product) => {
+  return acc + product.quantity;
+}, 0);
+
+
+console.log(totalQuantity);
+
