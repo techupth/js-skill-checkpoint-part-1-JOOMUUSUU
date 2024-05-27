@@ -6,8 +6,14 @@ const inventory = [
 ];
 // เริ่มเขียนโค้ดตรงนี้
 function findMinQuantity(inventory) {
-    return min.quantity < current.quantity ? min : current;
-  }
+  let min = inventory[0];
 
-let minQuantity = findMinQuantity(inventory);
-console.log("สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้า:", minQuantity);
+  for (let i = 1; i < inventory.length; i++) {
+    if (inventory[i].quantity < min.quantity) {
+      min = inventory[i];
+    }
+  }
+  return min;
+}
+let minProduct = findMinQuantity(inventory);
+console.log(`สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ ${minProduct.name} ซึ่งมี ${minProduct.quantity} ชิ้น`);
